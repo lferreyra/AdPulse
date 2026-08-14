@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+@import "tailwindcss";
+
+/* ─── Light & Dark Theme Variable System ─── */
+:root, [data-theme="dark"], .dark {
+  --bg-primary: #0d0f14;
+  --bg-secondary: #161820;
+  --bg-card: #12141c;
+  --bg-card-hover: #1a1d28;
+  --border-color: #1f2128;
+  --border-strong: #242736;
+  
+  --text-primary: #f0f0ee;
+  --text-secondary: #9899a0;
+  --text-muted: #5a5c66;
+  
+  --accent-emerald: #10b981;
+  --accent-emerald-dark: #059669;
+  --accent-teal: #0d7377;
+  --accent-soft: rgba(5,150,105,0.12);
+  --accent-soft-border: rgba(5,150,105,0.25);
+  
+  --shadow-card: 0 14px 45px rgba(0,0,0,0.4);
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+[data-theme="light"], .light {
+  --bg-primary: #f8f7f2;
+  --bg-secondary: #ffffff;
+  --bg-card: #f8f8f7;
+  --bg-card-hover: #ffffff;
+  --border-color: #e4e2d9;
+  --border-strong: #d9d7cd;
+  
+  --text-primary: #1a1a19;
+  --text-secondary: #62625a;
+  --text-muted: #85857c;
+  
+  --accent-emerald: #137c60;
+  --accent-emerald-dark: #0d5e49;
+  --accent-teal: #0d7377;
+  --accent-soft: #d8eee5;
+  --accent-soft-border: #b9d8cc;
+  
+  --shadow-card: 0 14px 45px rgba(33,33,30,0.07);
+}
+
+/* ─── Global reset & Typography ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  min-height: 100svh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ─── Typography Utility Classes ─── */
+.font-sans  { font-family: var(--font-sans); }
+.font-mono  { font-family: var(--font-mono); }
+.font-serif { font-family: var(--font-serif); }
+
+/* ─── Glass & Card Component Utilities ─── */
+.glass-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+.glass-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ─── Focus accessibility ─── */
+:focus-visible {
+  outline: 2px solid var(--accent-emerald);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

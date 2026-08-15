@@ -3,6 +3,8 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Admin Dashboard — AdPulse" };
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function AdminPage() {
   const supabase = await createServerSupabaseClient({ useServiceRole: true });

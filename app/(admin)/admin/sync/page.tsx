@@ -3,6 +3,8 @@ import { SyncButton } from "./sync-button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Admin — Sincronización Meta Ads" };
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function AdminSyncPage() {
   const supabase = await createServerSupabaseClient({ useServiceRole: true });

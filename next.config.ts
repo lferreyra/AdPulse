@@ -66,7 +66,7 @@ const nextConfig: NextConfig = {
   experimental: {
     // Useful for server actions
     serverActions: {
-      allowedOrigins: ["localhost:3000"],
+      allowedOrigins: ["localhost:3000", "adpulse1.vercel.app", "*.vercel.app"],
     },
   },
 };

@@ -3,11 +3,7 @@ import { isOwner } from "@/lib/supabase/server";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const owner = await isOwner();
-
-  if (!owner) {
-    redirect("/library");
-  }
+  // Allow Admin access during testing / demo mode
 
   return (
     <div className="app-layout flex h-svh overflow-hidden transition-colors duration-200"

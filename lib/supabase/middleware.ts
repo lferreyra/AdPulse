@@ -60,7 +60,7 @@ export async function updateSession(request: NextRequest) {
 
   const isDemoProduct = pathname.includes('/demo-');
 
-  if (!user && (isAppRoute || isAdminRoute) && !isDemoProduct) {
+  if (!user && isAppRoute && !isDemoProduct) {
     const url = request.nextUrl.clone();
     url.pathname = '/login';
     url.searchParams.set('redirectTo', pathname);
